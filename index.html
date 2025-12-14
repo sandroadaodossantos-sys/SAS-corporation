@@ -59,13 +59,17 @@
       color: #c9b56a;
     }
   </style>
-</head>
-<body><header>
-  <h1>SAS</h1>
-  <p>CORPORATION</p>
-</header><section>
-  <h2>Visão Geral</h2>
-  <p>
+  <header>
+  <div style="text-align:right; font-size:14px;">
+    <button onclick="setLang('pt')">PT</button> |
+    <button onclick="setLang('en')">EN</button>
+  </div>
+
+  <h1 id="title">SAS</h1>
+  <p id="subtitle">CORPORATION</p>
+  </heade
+    <h2 id="visionTitle">Visão Geral</h2>
+  <p id="visionText">
     A <strong>Sandro Adão dos Santos Corporation</strong> é uma holding internacional de tecnologia, criada para controlar,
     proteger e expandir ativos digitais de alto valor. A empresa representa a base institucional da plataforma
     <strong>SAS Connection</strong>, unindo inovação tecnológica com uma identidade de luxo clássico.
@@ -111,5 +115,17 @@
   </p>
 </section><footer>
   © 2025 Sandro Adão dos Santos Corporation · SAS Corporation
-</footer></body>
+</footer></body><script>
+function setLang(lang) {
+  if (lang === 'en') {
+    document.getElementById('visionTitle').innerText = 'Overview';
+    document.getElementById('visionText').innerText =
+      'SAS Corporation is a global technology holding focused on digital assets, innovation and security.';
+  } else {
+    document.getElementById('visionTitle').innerText = 'Visão Geral';
+    document.getElementById('visionText').innerText =
+      'A SAS Corporation atua como um grupo tecnológico focado em ativos digitais, inovação e segurança.';
+  }
+}
+  </script>
   </html>
