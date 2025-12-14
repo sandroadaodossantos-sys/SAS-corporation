@@ -59,7 +59,17 @@
       color: #c9b56a;
     }
   </style>
-  <header>
+    <header>
+
+  <div style="text-align:center; margin-top:20px;">
+    <button onclick="setLang('pt')" style="margin:5px; padding:10px 20px;">PT</button>
+    <button onclick="setLang('en')" style="margin:5px; padding:10px 20px;">EN</button>
+  </div>
+
+  <h1>SAS</h1>
+  <p>CORPORATION</p>
+
+    </header>
   <div style="text-align:right; font-size:14px;">
     <button onclick="setLang('pt')">PT</button> |
     <button onclick="setLang('en')">EN</button>
@@ -67,12 +77,10 @@
 
   <h1 id="title">SAS</h1>
   <p id="subtitle">CORPORATION</p>
-  </<h2 id="visionTitle">Visão Geral</h2>
-  <p id="visionText">
-    A <strong>Sandro Adão dos Santos Corporation</strong> é uma holding internacional de tecnologia, criada para controlar,
-    proteger e expandir ativos digitais de alto valor. A empresa representa a base institucional da plataforma
-    <strong>SAS Connection</strong>, unindo inovação tecnológica com uma identidade de luxo clássico.
-  </p>
+  <h2 id="visionTitle">Visão Geral</h2>
+<p id="visionText">
+A SAS Corporation atua como um grupo tecnológico focado em ativos digitais, inovação e segurança.
+</p>
 </section><section>
   <h2>Missão, Visão e Valores</h2>
   <div class="grid">
@@ -130,17 +138,22 @@ function setLang(lang) {
   document.getElementById('visionTitle').innerText = data[lang].title;
   document.getElementById('visionText').innerText = data[lang].text;
 }
-</script></body><script>
+</script><script>
 function setLang(lang) {
-  if (lang === 'en') {
-    document.getElementById('visionTitle').innerText = 'Overview';
-    document.getElementById('visionText').innerText =
-      'SAS Corporation is a global technology holding focused on digital assets, innovation and security.';
-  } else {
-    document.getElementById('visionTitle').innerText = 'Visão Geral';
-    document.getElementById('visionText').innerText =
-      'A SAS Corporation atua como um grupo tecnológico focado em ativos digitais, inovação e segurança.';
-  }
+  const data = {
+    pt: {
+      title: 'Visão Geral',
+      text: 'A SAS Corporation atua como um grupo tecnológico focado em ativos digitais, inovação e segurança.'
+    },
+    en: {
+      title: 'Overview',
+      text: 'SAS Corporation operates as a global technology group focused on digital assets, innovation, and security.'
+    }
+  };
+
+  document.getElementById('visionTitle').innerText = data[lang].title;
+  document.getElementById('visionText').innerText = data[lang].text;
 }
-  </script>
+</script></body><script>
+
   </html>
